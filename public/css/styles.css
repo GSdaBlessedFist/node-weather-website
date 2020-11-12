@@ -1,0 +1,32 @@
+
+*{
+	margin:  0px;
+	color:  white;
+}
+a{
+	background: ;
+	display:  block;
+	color:  aqua;
+}
+input{
+	color:  black;
+}
+body{
+	background: #222222;
+}
+h1{
+	background: #666666;
+	color:  azure;
+	border-bottom: 2px white solid;
+}
+img{
+	display: block;
+	position: relative;
+	margin: auto;
+	height: 70vh;
+	border:  15px aqua solid;
+}
+#pagetitle{
+	background: rbga(22,22,22,.25);
+	border-bottom: 2px white solid;
+}
