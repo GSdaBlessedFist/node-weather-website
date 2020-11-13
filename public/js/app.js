@@ -5,6 +5,7 @@ const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.querySelector('#message-1');
 const messageTwo = document.querySelector('#message-2');
+const messageThree = document.querySelector('#message-3');
 
 weatherForm.addEventListener('submit',(e)=>{
 	e.preventDefault();
@@ -22,7 +23,8 @@ weatherForm.addEventListener('submit',(e)=>{
 			messageOne.textContent = data.error;
 		}else{
 			messageOne.textContent = data.location;
-			messageTwo.textContent = data.weatherDescription;//  <----  <----  <----
+			messageTwo.textContent = `Today's forecast calls for ${data.weatherDescription} weather.`;
+			messageThree.textContent = `precipitation: ${data.precipitation}\%`;
 			}
 			
 		});
