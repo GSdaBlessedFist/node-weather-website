@@ -1,0 +1,7 @@
+@mixin bigger{
+	font-size: +3em;
+}
+
+div{
+	@include bigger;
+}
