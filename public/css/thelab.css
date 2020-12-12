@@ -15,18 +15,3 @@
 /*////////////////////////COLOR from object FUNCTION///////////*/
 /*///////////////////////DEEP-MAP-GET/////////////////*/
 /*/////////////////////MAP-to-ARRAY//////////////////*/
-/* line 12, ../../src/scss/styles.scss */
-:root {
-  --bg: #879878;
-}
-
-/* line 17, ../../src/scss/styles.scss */
-* {
-  margin: 0;
-  padding: 0px;
-}
-
-/* line 18, ../../src/scss/styles.scss */
-body {
-  background: #879878;/*var(--bg);*/
-}

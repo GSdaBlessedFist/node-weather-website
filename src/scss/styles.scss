@@ -1,0 +1,21 @@
+@import "thelab";
+//////////////////////////////////MIXINS
+@mixin borderHelp{
+	border: 1px yellow solid;
+	box-sizing: border-box;
+}
+/////////////////////////////FUNCTIONS
+@function x($variable){
+	@return var(--#{$variable});
+}
+////////////////////////// //VARIABLES
+:root{
+	--bg: #879878;
+}
+
+//////////////////////////////////
+*{margin:0;padding:0px;}
+body{
+	background: x(bg);
+}
+.main-content{}

@@ -1,0 +1,86 @@
+/*In this file: 
+1) Centering Mixin : "center";
+2) Left-Right Centering Mixin : "lrcenter";
+3) Top-Bottom Centering Mixin : "tbcenter";
+4) Padding Mixin : "pads($t,$r,$b,$l)";
+5) Simple Grid/Cell Mixin : "grid($w,$h,$colQUOTES,$rQUOTES)";
+6) Animation : "anime($name,$delay,$duration,$ease,$count)";
+7) COLOR function: "COLOR($base, $shade: base)"
+8) Deep Map Gett function: "getProp($map,$keys...)"
+9) MAP-to-ARRAY function: "map2list($value, $keep: 'both')"
+*/
+
+/*////////////////////CENTERING/////////////////////*/
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@mixin lrcenter {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+@mixin tbcenter {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+}
+@mixin pads($t,$r,$b,$l){
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+/*//////////////////////GRIDDING///////////////////////*/
+@mixin grid($w,$h,$colQUOTES,$rQUOTES){
+	display: grid;
+	width: $w;
+	height: $h;
+	grid-template-columns: unquote($colQUOTES);
+	grid-template-rows: unquote($rQUOTES) ;
+};
+/*////////////////////ANIMATION//////////////////*/
+@mixin anime($name,$delay,$duration,$ease,$count){
+    animation-name: $name;
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-timing-function: $ease;
+    animation-iteration-count: $count;
+    animation-fill-mode: both;
+};
+/*////////////////////////COLOR from object FUNCTION///////////*/
+@function COLOR($base, $shade: base) {
+  $color: map-get(map-get($colorsTheme, $base), $shade);
+  @return $color;
+}
+/*///////////////////////DEEP-MAP-GET/////////////////*/
+@function getProp($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+};
+/*/////////////////////MAP-to-ARRAY//////////////////*/
+@function map2list($value, $keep: 'both') {
+    $keep: if(index('keys' 'values', $keep), $keep, 'both');
+    @if type-of($value)=='map' {
+        $keys: ();
+        $values: ();
+        @each $key, $val in $value {
+            $keys: append($keys, $key);
+            $values: append($values, $val);
+        }
+        @if $keep=='keys' {
+            @return $keys;
+        }
+        @else if $keep=='values' {
+            @return $values;
+        }
+        @else {
+            @return zip($keys, $values);
+        }
+    }
+    @return if(type-of($value) !='list', ($value, ), $value);
+}
