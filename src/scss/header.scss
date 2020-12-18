@@ -1,0 +1,37 @@
+@import "thelab";
+@import "mixins";
+@import "functions";
+@import "variables";
+@import "colorthemes-setup";
+
+
+.navigation{
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	background: getProp($colorTheme,primary,base);
+	height: $navbarHeight;
+	max-height: $navbarHeight;
+	font-family: 'Montserrat', sans-serif;
+	&>a{
+		text-decoration: none;	
+		color:white;
+	}
+	@media all and (max-width: 800px){
+		justify-content: space-around;
+	}
+
+
+}
+.navigation.link{
+	width: 125px;
+	/* @include borderHelp; */
+	@include justAlign;
+	transition: all $buttonClicktiming;
+	&:hover{
+		background: getProp($colorTheme,primary,dark);
+		color: getProp($colorTheme,primary,lighter);
+	}
+
+}

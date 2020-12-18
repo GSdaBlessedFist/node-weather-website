@@ -1,0 +1,52 @@
+/*VARIABLES*************************/
+
+$primaryColor  : #4D73E7;  
+$secondaryColor: #3E9E49;  
+$tetriaryColor: #9FC425;
+$accentColor: #FFEA00; 
+
+$light: 10;
+$lighter: 20; 
+$lightest: 35;
+$dark: 20;
+$darker: 30;
+$darkest: 40;
+
+$colorTheme:(
+	primary: (
+		base: $primaryColor,
+		light: lighten($primaryColor, $light),
+		lighter: lighten($primaryColor, $lighter),
+		lightest: lighten($primaryColor, $lightest),
+		dark: darken($primaryColor, $dark),
+		darker: darken($primaryColor, $darker),
+		darkest: darken($primaryColor, $darkest)
+	),
+	secondary: (
+		base: $secondaryColor,
+		light: lighten($secondaryColor, $light),
+		lighter: lighten($secondaryColor, $lighter),
+		lightest: lighten($secondaryColor, $lightest),
+		dark: darken($secondaryColor, $dark),
+		darker: darken($secondaryColor, $darker),
+		darkest: darken($secondaryColor, $darkest)
+	),
+	tetriary: (
+		base: $tetriaryColor,
+		light: lighten($tetriaryColor, $light),
+		lighter: lighten($tetriaryColor, $lighter),
+		lightest: lighten($tetriaryColor, $lightest),
+		dark: darken($tetriaryColor, $dark),
+		darker: darken($tetriaryColor, $darker),
+		darkest: darken($tetriaryColor, $darkest)
+	),
+	accent: (
+		base: $accentColor,
+		light: lighten($accentColor, $light),
+		lighter: lighten($accentColor, $lighter),
+		lightest: lighten($accentColor, $lightest),
+		dark: darken($accentColor, $dark),
+		darker: darken($accentColor, $darker),
+		darkest: darken($accentColor, $darkest)
+	)		
+);

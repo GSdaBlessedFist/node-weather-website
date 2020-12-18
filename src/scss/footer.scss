@@ -1,0 +1,39 @@
+@import "thelab";
+@import "mixins";
+@import "functions";
+@import "variables";
+@import "colorthemes-setup";
+
+.footer{
+	display: flex;
+	position: fixed;
+	justify-content: space-evenly;
+	align-items: center;
+  	left: 0;
+  	bottom: 0;
+  	width: 100%;
+  	height: 75px;
+  	max-height: 75px !important;
+	background: getProp($colorTheme,primary,base);
+	
+	font-family: 'Montserrat', sans-serif;
+	&>a{
+		text-decoration: none;	
+		color:white;
+
+	}
+	// @media all and (max-width: 800px){
+	// 	justify-content: space-around;
+	// }
+}
+.footer.link{
+	width: 125px;
+	/* @include borderHelp; */
+	@include justAlign;
+	transition: all $buttonClicktiming;
+	&:hover{
+		background: getProp($colorTheme,primary,dark);
+		color: getProp($colorTheme,primary,lighter);
+	}
+
+}

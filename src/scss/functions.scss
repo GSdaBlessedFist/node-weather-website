@@ -1,0 +1,3 @@
+@function x($variable){
+	@return var(--#{$variable});
+}

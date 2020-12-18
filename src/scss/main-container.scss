@@ -1,0 +1,31 @@
+@import "thelab";
+@import "mixins";
+@import "functions";
+@import "variables";
+@import "colorthemes-setup";
+
+.main-container{
+	@include grid(100%,100px,"repeat(6,1fr)","15% 25% 25% 35%");
+	grid-templates-area:
+		"time time time time time time"
+		"didyouknow didyouknow didyouknow temp temp temp"
+		"didyouknow didyouknow didyouknow temp temp temp"
+		"forecast forecast forecast forecast forecast forecast";
+
+	&.section_time{
+		grid-area: time;
+		background: orange;
+	}
+	&.section_didyouknow{
+		grid-area: didyouknow;
+		background: teal;
+	}
+	&.section_temperature{
+		grid-area: temp;
+		background: red;
+	}
+	&.section_forecast{
+		grid-area: forecast;
+		background: purple;
+	}
+}

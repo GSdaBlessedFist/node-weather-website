@@ -1,0 +1,16 @@
+
+@mixin borderHelp{
+	border: 1px red solid;
+	box-sizing: border-box;
+}
+@mixin justAlign{
+	justify-content: center;
+	align-items: center;
+}
+// FONTS
+@mixin mainFont{
+	font-family: 'Montserrat', sans-serif;
+}
+@mixin minorFont{
+	font-family: 'Roboto', sans-serif;
+}

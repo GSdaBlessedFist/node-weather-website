@@ -1,0 +1,59 @@
+/*In this file: 
+1) Centering Mixin : "center";
+2) Left-Right Centering Mixin : "lrcenter";
+3) Top-Bottom Centering Mixin : "tbcenter";
+4) Padding Mixin : "pads($t,$r,$b,$l)";
+5) Simple Grid/Cell Mixin : "grid($w,$h,$colQUOTES,$rQUOTES)";
+6) Animation : "anime($name,$delay,$duration,$ease,$count)";
+7) COLOR function: "COLOR($base, $shade: base)"
+8) Deep Map Gett function: "getProp($map,$keys...)"
+9) MAP-to-ARRAY function: "map2list($value, $keep: 'both')"
+*/
+/*////////////////////CENTERING/////////////////////*/
+/*//////////////////////GRIDDING///////////////////////*/
+/*////////////////////ANIMATION//////////////////*/
+/*////////////////////////COLOR from object FUNCTION///////////*/
+/*///////////////////////DEEP-MAP-GET/////////////////*/
+/*/////////////////////MAP-to-ARRAY//////////////////*/
+/* line 2, ../../src/scss/variables.scss */
+:root {
+  --bg: #833378;
+}
+
+/*VARIABLES*************************/
+/* line 8, ../../src/scss/header.scss */
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background: #4D73E7;
+  height: 75px;
+  max-height: 75px;
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 17, ../../src/scss/header.scss */
+.navigation > a {
+  text-decoration: none;
+  color: white;
+}
+@media all and (max-width: 800px) {
+  /* line 8, ../../src/scss/header.scss */
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+/* line 27, ../../src/scss/header.scss */
+.navigation.link {
+  width: 125px;
+  /* @include borderHelp; */
+  justify-content: center;
+  align-items: center;
+  transition: all 0.65s;
+}
+/* line 32, ../../src/scss/header.scss */
+.navigation.link:hover {
+  background: #183fb6;
+  color: #a7baf3;
+}

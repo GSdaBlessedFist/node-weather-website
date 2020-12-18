@@ -1,21 +1,14 @@
 @import "thelab";
-//////////////////////////////////MIXINS
-@mixin borderHelp{
-	border: 1px yellow solid;
-	box-sizing: border-box;
-}
-/////////////////////////////FUNCTIONS
-@function x($variable){
-	@return var(--#{$variable});
-}
-////////////////////////// //VARIABLES
-:root{
-	--bg: #879878;
-}
+@import "mixins";
+@import "colorthemes-setup";
+@import "variables";
+@import "functions";
+@import "header";
+@import "main-container";
+@import "footer";
 
-//////////////////////////////////
-*{margin:0;padding:0px;}
-body{
-	background: x(bg);
+*{margin:0;padding:0px;box-sizing:border-box;}
+
+.message{
+	@include minorFont;
 }
-.main-content{}
